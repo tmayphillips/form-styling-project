@@ -9,34 +9,43 @@
       href="https://fonts.googleapis.com/css?family=Raleway"
       rel="stylesheet"
     />
+    <link
+    href="style.css"
+    rel="stylesheet"
+  />
+  
   </head>
   <body>
     <div id="container">
       <div class="form-wrap">
         <h1>Sign Up</h1>
         <p>It's free and only takes a minute</p>
-        <form>
+        <form id='contact-form'>
           <div class="form-group">
             <label for="first-name">First Name</label>
-            <input type="text" name="firstName" id="first-name" />
+            <input type="text" name="firstName" id="first-name" required/>
           </div>
           <div class="form-group">
             <label for="last-name">Last Name</label>
-            <input type="text" name="lastName" id="last-name" />
+            <input type="text" name="lastName" id="last-name" required/>
           </div>
           <div class="form-group">
             <label for="email">Email</label>
-            <input type="email" name="email" id="email" />
+            <input type="email" name="email" id="email" required/>
           </div>
           <div class="form-group">
             <label for="password">Password</label>
-            <input type="password" name="password" id="password" />
+            <input type="password" name="password" id="password" required/>
           </div>
           <div class="form-group">
             <label for="password2">Confirm Password</label>
-            <input type="password" name="pasword2" id="password2" />
+            <input type="password" name="password2" id="password2" required/>
           </div>
-          <button type="submit" class="btn">Sign Up</button>
+          <div class="form-group">
+            <p id='passwordError'>Your passwords do not match.</p>
+            <p id='formSubmitted'>You've been signed up!</p>
+          </div>
+          <button type="submit" class="btn" id='submitBtn'>Sign Up</button>
           <p class="bottom-text">
             By clicking the Sign Up button, you agree to our
             <a href="#">Terms & Conditions</a> and
@@ -48,5 +57,12 @@
         <p>Already have an account? <a href="#">Login Here</a></p>
       </footer>
     </div>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+      (function() {
+        emailjs.init("user_i7gGxnGkYMcFUFT4IdYm4");
+        })();
+    </script>
+    <script src="sendEmail.js"></script>
   </body>
 </html>
